@@ -29,6 +29,9 @@ span{
 #c1{
     color: white;
 }
-#c2{
+.c2{
+    color: black;
+}
+input{
     color: black;
 }
