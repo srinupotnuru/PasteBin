@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap');
+body{
+    background-color: #000000;
+    
+    font-family: 'KoHo', sans-serif;
+}
+.navbar{
+    margin-top: 10px;
+    background-color: transparent;
+    color: #5C5C5C;
+}
+.navbar-brand{
+    color: #5C5C5C;
+    margin-left: 30px;
+}
+.nav-link{
+    color: #5C5C5C;
+}
+.my{
+    color: white;
+    background-color: white;
+}
+.nav-link:hover{
+    color: white;
+}
+span{
+    cursor: pointer;
+}
+#c1{
+    color: white;
+}
+#c2{
+    color: black;
+}
