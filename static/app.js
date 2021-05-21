@@ -1,5 +1,9 @@
 function copyToClipboard(text) {  
+    text=text.replace("index.html","");
+    console.log(text);
     window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+    window.location.href=text;
+
   }
 function doit()
 {
@@ -28,7 +32,9 @@ function doit()
             "Content-type": "application/json; charset=UTF-8",
           },
     }).then((response) => response.json()).then((data)=>{
-        let url=window.location.href+ "preview.html?id="  + data["result"];
+        let temp=window.location.href;
+       
+        let url=temp+"preview.html?id="  + data["result"];
         
         copyToClipboard(url);
     });
