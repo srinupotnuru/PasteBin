@@ -45,6 +45,15 @@ app.post("/create", (req, res) => {
     });
 });
 
+
+app.post("/getdocs",(req,res)=>{
+  db.collection('docs').get().then(querySnapshot =>{
+    const docs=querySnapshot.docs.map(doc=>doc.data());
+    console.log(docs);
+    res.send({res:docs});
+  })
+});
+
 app.listen(port, () => {
   console.log("running at 2104");
 });
