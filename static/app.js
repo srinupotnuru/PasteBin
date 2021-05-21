@@ -25,7 +25,7 @@ function doit()
             "Content-type": "application/json; charset=UTF-8",
           },
     }).then((response) => response.json()).then((data)=>{
-        let url=window.location.href+data["result"];
+        let url=window.location.href+ "preview.html?id="  + data["result"];
         
         copyToClipboard(url);
     });
