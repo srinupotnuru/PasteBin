@@ -12,11 +12,14 @@ function doit()
     var author=document.getElementById('author');
     var text=document.getElementById('paste');
     var public=document.getElementById('private_check').checked;
+    var current = new Date();
+
     
     data['title']=title;
     data['author']=author.value;
     data['text']=text.value;
     data['public']=public;
+    data['time']=current.toLocaleString();
 
     fetch("/create",{
         method:"POST",
