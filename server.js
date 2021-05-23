@@ -13,7 +13,7 @@ admin.initializeApp({
 });
 const db = admin.firestore();
 app.post("/find", (req, res) => {
-   // console.log(req.body.id);
+    console.log(req.body.id);
   db.collection("docs")
     .doc(req.body.id)
     .get()
@@ -36,6 +36,11 @@ app.post("/find", (req, res) => {
 app.post("/create", (req, res) => {
   var data = req.body.data;
   var key = shortid.generate();
+  data['id']=key;
+  let temp=req.body.url;
+  temp=temp+key;
+  data['slink']=temp;
+  
   res.send({ result: key });
   db.collection("docs")
     .doc(key)

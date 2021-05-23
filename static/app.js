@@ -1,3 +1,11 @@
+var editor = CodeMirror.fromTextArea(document.getElementById("paste"), {
+    mode: "python",
+    theme: "dracula",
+    lineNumbers: true,
+    autoCloseTags: true,
+    autoCloseBrackets: true,
+  });
+
 function copyToClipboard(text) {  
     text=text.replace("index.html","");
     console.log(text);
@@ -24,10 +32,12 @@ function doit()
     data['text']=text.value;
     data['public']=public;
     data['time']=current.toLocaleString();
-
+    let temp=window.location.href;
+       
+    let url=temp+"preview.html?id=";
     fetch("/create",{
         method:"POST",
-        body:JSON.stringify({data}),
+        body:JSON.stringify({data,url}),
         headers: {
             "Content-type": "application/json; charset=UTF-8",
           },

@@ -19,7 +19,7 @@ var link=window.location.href;
             }
             console.log(db[i]);
             var s="";
-            s=s+'<div class="card mt-2"><div class="card-header inline"><h5 class="float-left">';
+            s=s+'<div class="card mt-2" ><div class="card-header inline"><h5 class="float-left">';
             s=s+db[i]['title'];
             s=s+'</h5>';
             s=s+'<h6 class="float-right">' + db[i]['time'] + '</h6></div>';
@@ -27,7 +27,10 @@ var link=window.location.href;
             s=s+st;
             s=s+ '</p><b><span>';
             s=s+'@'+db[i]['author'];
-            s=s+'</span></b></div></div>';
+            s=s+'</span></b>';
+            s=s+'<br>';
+            s=s+'<a href="'+ db[i]['slink'] +' ">Check Here</a>';
+            s=s+'</div></div>';
             console.log(s);
             $('#docs').append(s);
 
@@ -37,3 +40,7 @@ var link=window.location.href;
     });
 
 
+function getit()
+{
+
+}

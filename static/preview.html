@@ -16,11 +16,11 @@
     
     <script>
         var link=window.location.href;
-        link=link.substring(0,link.length-9);
-        var url=new URL(link);
+        link=link.substring(link.length-9,link.length);
+        var id=link;
         fetch("/find",{
         method:"POST",
-        body:JSON.stringify({url}),
+        body:JSON.stringify({id}),
         headers: {
             "Content-type": "application/json; charset=UTF-8",
           },
